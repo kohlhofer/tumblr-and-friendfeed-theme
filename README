@@ -18,8 +18,8 @@ WHAT YOU NEED:
 INSTRUCTIONS:
 
 1. Edit the source in tumblr.html as follows:
-  a) Replace my Friendfeed user name ("kohlhofer") with your own in lines 27, 555, 549
-  b) Replace "disqusforumname" with your own Disqus forum name in line 515
+  a) Replace my Friendfeed user name ("kohlhofer") with your own in lines 27, 570, 577
+  b) Replace "disqusforumname" with your own Disqus forum name in line 522 and 536
 
 2. Upload the theme to your Tumblr log (as a custom theme in customization)
 
