@@ -1,0 +1,571 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <!-- DEFAULT COLORS -->
+        <meta name="color:Background" content="#fff"/>
+        <meta name="color:Content Background" content="#fff"/>
+        <meta name="color:Title" content="#444"/>
+        <meta name="color:Description" content="#666"/>
+        <meta name="color:Post Title" content="#069"/>    
+        <meta name="color:Text" content="#444"/>
+        <meta name="color:Inline Link" content="#069"/>
+        <meta name="color:Quote" content="#666"/>
+        <meta name="color:Quote Source" content="#444"/>
+        <meta name="color:Link Post" content="#069"/>
+        <meta name="color:Conversation Background" content="#f8f8f8"/>
+        <meta name="color:Conversation Border" content="#ddd"/>
+        <meta name="color:Conversation Text" content="#444"/>
+        <meta name="color:Conversation Label" content="#111"/>
+        <meta name="color:Photo Border" content="#eee"/>
+        <!-- END DEFAULT COLORS -->
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>{Title}{block:PostSummary}: {PostSummary}{/block:PostSummary}</title>
+        <link rel="icon" href="{Favicon}"/>
+        <link rel="alternate" type="application/rss+xml" href="{RSS}"/>
+				<link rel="alternate" type="application/rss+xml" href="http://friendfeed.com/kohlhofer?format=atom" />
+
+        <style type="text/css">
+            
+				body {
+				margin: 0px;
+				padding: 0px;
+				background-color: {color:Background};
+				font-family: Arial, sans-serif;
+				font-size:0.9em;
+				}
+
+				a {
+				color:#069;
+				}
+
+
+				#content {
+				width:    50%;
+				margin-right: 4%;
+				background-color: {color:Content Background};
+				float:left;
+				}
+				
+				#footer {
+					clear:both;
+					fontsize:0.8em;
+					color:#999;
+					padding:5em 2em 2em 2em;
+					text-align:center;
+				}
+
+				#blog {
+				margin:           2em 0px 0px 2em;
+				background-color: {color:Content Background};
+				position:         relative;
+				}
+
+				#stream {
+				border-left: 1px solid #DDD;
+				padding-left: 1em;
+				padding-top: 1.5em;
+				font-size: 0.9em;
+				}
+
+
+
+				#infoBlock {
+				border: 1px solid #DDD;
+				background-color: #EEE;
+				-moz-border-radius-topright: 5px;
+				-webkit-border-top-right-radius: 5px;
+				-moz-border-radius-bottomright: 5px;
+				-webkit-border-bottom-right-radius: 5px;
+				}
+
+				div.blogMeta {
+				border-bottom: 1px solid #DDD;
+				padding: 1.3em 1em 1.8em 3em;
+				background: transparent url(http://kohlhofer.com/images/blogLeft.gif) no-repeat 0.5em 1.2em;
+				}
+
+				div.streamMeta {
+				padding: 1.3em 1em 1.8em 3em;
+				background: transparent url(http://kohlhofer.com/images/blogDown.gif) no-repeat 0.5em 1.2em;
+				}
+
+
+
+				a {
+				color:            {color:Inline Link};
+				}
+
+				a.rss {
+				padding:0.2em 0.8em 0.2em 20px;
+				background: transparent url(http://kohlhofer.com/images/feed-icon.gif) no-repeat left center;
+				-webkit-border-radius: 3px;
+				-moz-border-radius: 3px;
+				font-weight: bold;
+				}
+
+				h1, h2.streamTitle {
+				font-size:1.2em;
+				font-weight:bold;
+				margin: 0px 0px 0.7em -1em;
+				padding-left: 1em;
+				}
+
+
+
+
+
+				div#search {
+				margin: 1em 0px 0px 0px;
+				padding: 0px;
+				}
+
+				div#search input, div#search button {
+				font-size: 1.1em;
+				vertical-align: middle;
+				padding: 0.2em 0.2em;
+				}
+
+				div#search button {
+				padding: 0.2em 0.5em;
+				}
+
+				#searchInput {
+				width: 8em
+				}
+
+				div#search form {
+				margin: 0px;
+				padding: 0px;
+				}
+
+				h1 a {
+				color:            {color:Title};
+				text-decoration:  none;
+				}
+
+				#sidebar {
+				float: left;
+				width: 40%;
+				margin-top:2em;
+				}
+
+
+
+
+				#description div a {
+				color:            {color:Description};
+				}
+
+				#description #nav_container {
+				font-size: 13px;
+				font-weight: bold;
+				}
+
+				#description #nav_container .dim {
+				filter: alpha(opacity=50); 
+				-moz-opacity: 0.5; 
+				opacity: 0.5;
+				}
+
+				#searchresultcount {
+				padding: 1em 0px 1.5em 0px;
+				margin: 0px;
+				text-align: center;
+				border-top: 1px solid #EEE;
+				}
+
+				.post {
+				position:         relative;
+				margin: 0px 0px 4em 0px;
+				}
+
+				.post div.labels {
+				border-top: 1px solid #EEE;
+				margin-bottom: 1em;
+				text-align: right;
+				}
+
+				.post div.date {
+				white-space:      nowrap;
+				padding:          0.3em 0px;
+				float:right;
+				margin:0px 0px 0.5em 1em;
+				border-bottom: 1px dotted #DDD;
+				}
+
+				.post div.disqusCommentCount {
+				white-space:      nowrap;
+				padding:          0.3em 0px;
+				float:right;
+				margin:0px 0px 0.5em 1em;
+				border-bottom: 1px dotted #CCC;
+				}
+
+				.post div.date a, div.disqusCommentCount a {
+				text-decoration:  none;
+				color:#999;
+				}
+
+				.post h2 {
+				font-size:        1.4em;
+				font-weight:      Bold;
+				color:            {color:Post Title};
+				margin:           0px 0px 10px 0px;
+				}
+
+				.post h2 a {
+				color:            {color:Post Title};
+				text-decoration:  none;
+				}
+
+				/* Regular Post */
+				.post .regular {
+				font-size:        1em;
+				color:            {color:Text};
+				line-height:      1.4em;
+				}
+
+				.post .regular blockquote {
+				font-style: italic;
+				}
+
+				/* Photo Post */
+				.post .photo img {
+				border: solid 10px {color:Photo Border};
+				}
+
+				.post .photo div.caption {
+				font-size: 1em;
+				color: {color:Text};
+				margin-top:0.5em;
+				}
+
+				.post .photo div.caption a {
+				color: {color:Text};
+				}
+
+				/* Quote Post */
+				.post .quote span.quote {
+				font: normal 1.6em Helvetica, sans-serif;
+				color: #333;
+				display: block;
+				clear: right;
+				line-height: 1.3em;
+				}
+
+				.post .quote span.quote a {
+				color: {color:Quote};
+				}
+
+
+
+				.post .quote span.quote big.quote {
+				font: Bold 1.5em Georgia, serif;
+				line-height: 8px;
+				vertical-align: -10px;
+				}
+
+				.post .quote span.source {
+				font-size: 1.1em;
+				font-weight: normal;
+				color: {color:Quote Source};
+				margin-top:0.5em;
+				display:block;
+				}
+
+				.post .quote span.source a {
+				color: {color:Quote Source};
+				}
+
+				/* Link Post */
+				.post .link a.link {
+				font: Bold 1.2em Helvetica, sans-serif;
+				color: {color:Link Post};
+				}
+
+				.post .link span.description {
+				font-size: 1em;
+				font-weight: normal;
+				}
+
+				/* Conversation Post */
+				.post .conversation ul {
+				background-color: {color:Conversation Background};
+				list-style-type:  none;
+				margin: 0px;
+				padding: 0px;
+				}
+
+				.post .conversation ul li {
+				border-bottom:    solid 1px {color:Conversation Border};
+				font-size:        1em;
+				padding:          0.4em 0.8em;
+				color:            {color:Conversation Text};
+				}
+
+				.post .conversation ul li span.label {
+				font-weight:      bold;
+				color:            {color:Conversation Label};
+				}
+
+				/* Audio Post */      
+				.post .audio div.caption {
+				font-size: 1em;
+				color: {color:Text};
+				margin-top: 0.5em;
+				}
+
+				.post .audio div.caption a {
+				color: {color:Text};
+				}
+
+				/* Video Post */
+				.post .video {
+				width: 400px;
+				margin: auto;
+				}
+
+				.post .video div.caption {
+				font-size: 1em;
+				color: {color:Text};
+				margin-top: 0.5em;
+				}
+
+				.post div.video div.caption a {
+				color: {color:Text};
+				}
+
+				#pagination {
+				padding:2em 0px 3em 0px;
+				font-size:1em;
+				}
+
+				#pagination a {
+				float:left;
+				margin-right:1.5em;
+				-webkit-border-radius: 2px;
+				-moz-border-radius: 2px;
+				background-color:#FFF;
+				padding:0.3em 0.5em ;
+				text-decoration:none;
+				border: 1px solid #8b937a;
+				}
+
+				.query { font-weight: bold; }
+
+
+
+
+
+				.friendfeed .logo img { 
+				display: none; 
+				}
+
+				.friendfeed.widget {
+				border-width:0px !important;
+				font-size: 1em !important;
+				}
+
+				.feed { 
+				padding:0px !important;
+				margin:1em 0px 2em !important;
+				}
+
+				.friendfeed .body { 
+				margin-bottom: 3em !important; 
+				}
+
+				.friendfeed .info {
+				color: #AAA !important;
+				font-size: 1.1em !important;
+				margin-top: 0.4em !important;
+				}
+
+				.friendfeed .timestamp, .friendfeed.widget .info a {
+				color: #AAA !important;
+				}
+
+				.friendfeed .comment {
+				color: #AAA !important;
+				font-size: 1.1em !important;
+				white-space: normal !important;
+				}
+
+				.friendfeed .link {
+				font-size: 1.3em !important;
+				font-weight: bold !important;
+				}	
+
+				.friendfeed .link a {
+				font-weight: bold !important;
+				}	
+
+				.friendfeed.widget .summary  {
+				color: #000 !important;
+				font-size: 1.1em !important;
+				white-space: normal !important;
+				}	
+
+				.friendfeed a {
+				color:#069 !important;
+				}	
+
+
+						
+            {CustomCSS}
+        </style>
+
+    </head>
+    <body>
+				
+        <div id="content">
+					<div id="blog">            
+						{block:SearchPage}
+						<div id="searchresultcount">
+							<p>Your search for <span class="query">{SearchQuery}</span> returned {SearchResultCount} result(s).</p>
+						</div>
+						{/block:SearchPage}
+
+            {block:Posts}
+                <div class="post">
+                    <div class="labels">
+                            <div class="date"><a href="{Permalink}">{Month} {DayOfMonth}</a></div>
+                            <div class="disqusCommentCount"><a href="{Permalink}#disqus_thread">Comments</a></div>
+                        
+                    </div>
+
+                    {block:Regular}
+                        <div class="regular">
+                            {block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+                            {Body}
+                        </div>
+                    {/block:Regular}
+                    
+                    {block:Photo}
+                        <div class="photo">
+                            {LinkOpenTag}<img src="{PhotoURL-400}" alt="{PhotoAlt}"/>{LinkCloseTag}
+                            {block:Caption}
+                                <div class="caption">{Caption}</div>
+                            {/block:Caption}
+                        </div>
+                    {/block:Photo}
+                    
+                    {block:Quote}
+                        <div class="quote">
+                            <span class="quote">
+                                <big class="quote">&#147;</big> {Quote}
+                            </span>
+                            {block:Source}<span class="source">{Source}</span>{/block:Source}
+                        </div>
+                    {/block:Quote}
+                    
+                    {block:Link}
+                        <div class="link">
+                            <a href="{URL}" class="link" {Target}>{Name}</a>
+                            {block:Description}
+                                <span class="description">{Description}</span>
+                            {/block:Description}
+                        </div>
+                    {/block:Link}
+                    
+                    {block:Conversation}
+                        <div class="conversation">
+                            {block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+                            <ul>
+                                {block:Lines}
+                                    <li>
+                                        {block:Label}<span class="label">{Label}</span>{/block:Label}
+                                        {Line}
+                                    </li>
+                                {/block:Lines}
+                            </ul>
+                        </div>
+                    {/block:Conversation}
+                    
+                    {block:Audio}
+                        <div class="audio">
+                            {AudioPlayerGrey}
+                            {block:Caption}
+                                <div class="caption">{Caption}</div>
+                            {/block:Caption}
+                        </div>
+                    {/block:Audio}
+                    
+                    {block:Video}
+                        <div class="video">
+                            {Video-400}
+                            {block:Caption}
+                                <div class="caption">{Caption}</div>
+                            {/block:Caption}
+                        </div>
+                    {/block:Video}
+                </div>
+            {/block:Posts}
+            
+            {block:Permalink}
+            <script type="text/javascript">var disqus_url = "{Permalink}"; var disqus_title ="{block:PostTitle}{PostTitle}{/block:PostTitle}";</script>
+            <div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/kohlhofer/embed.js"></script>
+            <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+            {/block:Permalink}
+
+            <script type="text/javascript">
+            //<![CDATA[
+            (function() {
+            		var links = document.getElementsByTagName('a');
+            		var query = '?';
+            		for(var i = 0; i < links.length; i++) {
+            			if(links[i].href.indexOf('#disqus_thread') >= 0) {
+            				query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+            			}
+            		}
+            		document.write('<script type="text/javascript" src="http://disqus.com/forums/[disqusforumname]/get_num_replies.js' + query + '"></' + 'script>');
+            	})();
+            //]]>
+            </script>
+            
+
+            <div id="pagination">
+								{block:NextPage}
+	                  <a href="{NextPage}">&#171; Older</a>
+	              {/block:NextPage}
+
+                {block:PreviousPage}
+                    <a href="{PreviousPage}">Newer &#187;</a>
+                {/block:PreviousPage}
+            </div>
+					</div>
+        </div>
+
+				<div id="sidebar">
+								<div id="infoBlock">
+									<div class="blogMeta">
+									  <h1><a href="/">{Title}</a></h1>
+  									
+  									<a href="{RSS}" class="rss">Subscribe to "{Title}"</a>
+  									
+  									<div id="search">
+  										<form action="/search" method="get">
+  										    <input type="text" name="q" id="searchInput" value="{SearchQuery}"/>
+  										    <button type="submit" value="Search blog">Search</button>
+  										</form>
+  									</div>
+	                </div>
+									<div class="streamMeta">
+									  <h2 class="streamTitle">Other activity (stream)</h2>
+									  <a href="http://friendfeed.com/kohlhofer?format=atom" class="rss">Subscribe to the stream</a>
+									</div>
+								</div>
+
+								<div id="stream">
+								
+									<script type="text/javascript" src="http://friendfeed.com/embed/widget/kohlhofer?v=2&amp;num=15&amp;hide_subscribe=1"></script>
+								</div>
+        </div>
+
+				<div id="footer">
+						<span xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dc:title" rel="dc:type"><a href="http://github.com/kohlhofer/tumblr-and-friendfeed-theme/tree/master" title="Download Theme">Theme</a></span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://plasticshore.com" property="cc:attributionName" rel="cc:attributionURL">Alexander Kohlhofer</a>, licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share Alike 3.0 Unported License</a>.<br />Based on a work at <a xmlns:dc="http://purl.org/dc/elements/1.1/" href="http://blog.kohlhofer.com" rel="dc:source">blog.kohlhofer.com</a>.
+				</div>	
+    </body>
+</html>
