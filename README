@@ -1,0 +1,27 @@
+A Tumblr.com Theme by Alexander Kohlhofer
+http://plasticshore.com
+
+Version 0.2, Released October 2008
+
+
+LICENSE:
+This work is licensed under the Creative Commons Attribution-Share Alike 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/ or send a letter to Creative Commons, 171 Second Street, Suite 300, San Francisco, California, 94105, USA.
+
+SOURCES:
+http://github.com/kohlhofer/tumblr-and-friendfeed-theme/tree/master
+
+
+WHAT YOU NEED:
+- An account with Friendfeed.com (You'll need your user name)
+- An account with Disqus.com. Set up a new site there and note down the short name. Don't worry about Integration - this is covered by the instructions below.
+
+
+INSTRUCTIONS:
+
+1. Edit the source in tumblr.html as follows:
+
+  a) Replace my Friendfeed user name ("kohlhofer") with your own in lines 27, 555, 549
+
+  b) Replace "disqusforumname" with your own Disqus forum name in line 515
+
+2. Upload the theme to your Tumblr log (as a custom theme in customization)
