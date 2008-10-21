@@ -40,7 +40,23 @@
 				color:#069;
 				}
 
-
+				#navigation {
+					background-color:#000;
+					margin:0px;
+					padding:0.8em 30px;
+				}
+				
+				#navigation a {
+					margin-right:1em;
+					color:#DDD;
+					text-decoration:none;
+				}
+				
+				#navigation a:hover {
+					margin-right:1em;
+					color:#FFF;
+				}
+				
 				#content {
 				width:    50%;
 				margin-right: 4%;
@@ -432,8 +448,9 @@
 
     </head>
     <body>
-				
+				<p id="navigation"><a href="/">Home</a> <a href="/archive">Archive</a> <a href="/random">Random Post</a></p>
         <div id="content">
+					
 					<div id="blog">            
 						{block:SearchPage}
 						<div id="searchresultcount">
