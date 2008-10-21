@@ -10,18 +10,17 @@ This work is licensed under the Creative Commons Attribution-Share Alike 3.0 Unp
 SOURCES:
 http://github.com/kohlhofer/tumblr-and-friendfeed-theme/tree/master
 
-
 WHAT YOU NEED:
 - An account with Friendfeed.com (You'll need your user name)
-- An account with Disqus.com. Set up a new site there and note down the short name. Don't worry about Integration - this is covered by the instructions below.
-
+- An account with Disqus.com. Set up a new site there and note down the short name. Don't worry about integration - this is covered by the instructions below.
 
 INSTRUCTIONS:
 
 1. Edit the source in tumblr.html as follows:
-
   a) Replace my Friendfeed user name ("kohlhofer") with your own in lines 27, 555, 549
-
   b) Replace "disqusforumname" with your own Disqus forum name in line 515
 
 2. Upload the theme to your Tumblr log (as a custom theme in customization)
+
+OPTIONAL:
+Upload the images to your own server and change the path in the CSS bit of the source. This will save me some bandwidth and also ensure your site stays up when my servers go down.
