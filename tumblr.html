@@ -57,6 +57,12 @@
 					color:#FFF;
 				}
 				
+				p.permatime {
+				  color:#666;
+				  text-align:right;
+				  font-size:0.9em;
+				}
+				
 				#content {
 				width:    50%;
 				margin-right: 4%;
@@ -531,6 +537,10 @@
                             {/block:Caption}
                         </div>
                     {/block:Video}
+                    
+             		{block:Permalink}
+  	              <p class="permatime">posted {TimeAgo} | <a href="http://permatime.com/timestamp/{Timestamp}{block:Title}/{Title}{/block:Title}" title="View this time in your time zone with permatime">Permatime</a></p>
+  	            {/block:Permalink}    
                 </div>
            		{/block:Posts}
 
